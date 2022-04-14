@@ -1,0 +1,25 @@
+{
+  "coopcyclejhipsterApp": {
+    "cooperative": {
+      "home": {
+        "title": "Cooperatives",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Cooperative",
+        "createOrEditLabel": "Lisa või muuda Cooperative",
+        "notFound": "Ei leitud ühtegi Cooperatives"
+      },
+      "created": "Uus Cooperative on loodud identifikaatoriga {{ param }}",
+      "updated": "Cooperative identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Cooperative identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Cooperative {{ id }}?"
+      },
+      "detail": {
+        "title": "Cooperative"
+      },
+      "id": "Id",
+      "name": "Name",
+      "driver": "Driver"
+    }
+  }
+}

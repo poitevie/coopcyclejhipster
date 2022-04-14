@@ -1,0 +1,28 @@
+{
+  "coopcyclejhipsterApp": {
+    "driver": {
+      "home": {
+        "title": "Drivers",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Driver",
+        "createOrEditLabel": "Lisa või muuda Driver",
+        "notFound": "Ei leitud ühtegi Drivers"
+      },
+      "created": "Uus Driver on loodud identifikaatoriga {{ param }}",
+      "updated": "Driver identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Driver identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Driver {{ id }}?"
+      },
+      "detail": {
+        "title": "Driver"
+      },
+      "id": "ID",
+      "firstnameD": "Firstname D",
+      "lastnameD": "Lastname D",
+      "phoneD": "Phone D",
+      "command": "Command",
+      "cooperative": "Cooperative"
+    }
+  }
+}

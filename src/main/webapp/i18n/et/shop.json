@@ -1,0 +1,26 @@
+{
+  "coopcyclejhipsterApp": {
+    "shop": {
+      "home": {
+        "title": "Shops",
+        "refreshListLabel": "Värskenda nimekirja",
+        "createLabel": "Lisa uus Shop",
+        "createOrEditLabel": "Lisa või muuda Shop",
+        "notFound": "Ei leitud ühtegi Shops"
+      },
+      "created": "Uus Shop on loodud identifikaatoriga {{ param }}",
+      "updated": "Shop identifikaatoriga {{ param }} on muudetud",
+      "deleted": "Shop identifikaatoriga {{ param }} on kustutatud",
+      "delete": {
+        "question": "Kas olete kindel, et soovite kustutada Shop {{ id }}?"
+      },
+      "detail": {
+        "title": "Shop"
+      },
+      "id": "ID",
+      "addressS": "Address S",
+      "menu": "Menu",
+      "cart": "Cart"
+    }
+  }
+}

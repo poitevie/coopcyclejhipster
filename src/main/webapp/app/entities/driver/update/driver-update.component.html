@@ -1,0 +1,121 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-driver-heading" data-cy="DriverCreateUpdateHeading" jhiTranslate="coopcyclejhipsterApp.driver.home.createOrEditLabel">
+        Create or edit a Driver
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcyclejhipsterApp.driver.firstnameD" for="field_firstnameD">Firstname D</label>
+          <input
+            type="text"
+            class="form-control"
+            name="firstnameD"
+            id="field_firstnameD"
+            data-cy="firstnameD"
+            formControlName="firstnameD"
+          />
+          <div *ngIf="editForm.get('firstnameD')!.invalid && (editForm.get('firstnameD')!.dirty || editForm.get('firstnameD')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('firstnameD')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('firstnameD')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('firstnameD')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Firstname D' }"
+            >
+              This field should follow pattern for "Firstname D".
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcyclejhipsterApp.driver.lastnameD" for="field_lastnameD">Lastname D</label>
+          <input type="text" class="form-control" name="lastnameD" id="field_lastnameD" data-cy="lastnameD" formControlName="lastnameD" />
+          <div *ngIf="editForm.get('lastnameD')!.invalid && (editForm.get('lastnameD')!.dirty || editForm.get('lastnameD')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('lastnameD')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('lastnameD')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 50 }"
+            >
+              This field cannot be longer than 50 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('lastnameD')?.errors?.pattern"
+              jhiTranslate="entity.validation.pattern"
+              [translateValues]="{ pattern: 'Lastname D' }"
+            >
+              This field should follow pattern for "Lastname D".
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcyclejhipsterApp.driver.phoneD" for="field_phoneD">Phone D</label>
+          <input type="text" class="form-control" name="phoneD" id="field_phoneD" data-cy="phoneD" formControlName="phoneD" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopcyclejhipsterApp.driver.cooperative" for="field_cooperative">Cooperative</label>
+          <select class="form-control" id="field_cooperative" data-cy="cooperative" name="cooperative" formControlName="cooperative">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                cooperativeOption.id === editForm.get('cooperative')!.value?.id ? editForm.get('cooperative')!.value : cooperativeOption
+              "
+              *ngFor="let cooperativeOption of cooperativesSharedCollection; trackBy: trackCooperativeById"
+            >
+              {{ cooperativeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
